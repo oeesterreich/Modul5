@@ -45,7 +45,7 @@ public class Rabatt extends Rabattstrategie{
     @Override
     public void anzeigen() {
         super.anzeigen();
-        if (YearMonth.from(getFlugdatum()).equals(1)||YearMonth.from(getFlugdatum()).equals(4)||YearMonth.from(getFlugdatum()).equals(10)||YearMonth.from(getFlugdatum()).equals(1)||YearMonth.from(getFlugdatum()).equals(4))
+        if (getFlugdatum().getMonth() == Month.JANUARY||getFlugdatum().getMonth() == Month.APRIL||getFlugdatum().getMonth() == Month.OCTOBER||getFlugdatum().getMonth() == Month.FEBRUARY||getFlugdatum().getMonth() == Month.MARCH)
         {
             System.out.println("Rabattierterpreis: " + getReduzierterPreis(getRegulärpreis()));
         }
