@@ -9,6 +9,7 @@ public class Angebot {
         this.regulärpreis = regulärpreis;
         this.flugdatum = flugdatum;
         this.flugnummer = flugnummer;
+        getReduzierterPreis(regulärpreis);
     }
 
     protected void rabattsrategieWählen(){
@@ -39,17 +40,14 @@ public class Angebot {
         this.flugnummer = flugnummer;
     }
 
-    public double getReduzierterPreis(){
-        double preis = 0;
-        return preis;
+    public double getReduzierterPreis(double regulärpreis){
+        return regulärpreis;
     }
 
-    @Override
-    public String toString() {
-        return "Angebot{" +
-                "regulärpreis=" + regulärpreis +
-                ", flugdatum=" + flugdatum +
-                ", flugnummer='" + flugnummer + '\'' +
-                '}';
+    public void anzeigen(){
+        System.out.println("*** Flugticket ***");
+        System.out.println("Flugdatum: " + this.flugdatum);
+        System.out.println("Flugnummer: " + this.flugnummer);
+        System.out.println("Regulärpreis: " + this.regulärpreis);
     }
 }

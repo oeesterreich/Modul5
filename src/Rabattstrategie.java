@@ -8,9 +8,9 @@ public class Rabattstrategie extends Angebot {
         this.bezeichnung = bezeichnung;
     }
 
-    public double getReduzierterPreis(double preis)
+    public double getReduzierterPreis(double regulärpreis)
     {
-        return preis;
+        return regulärpreis;
     }
 
     public String getBezeichnung() {
@@ -19,5 +19,11 @@ public class Rabattstrategie extends Angebot {
 
     public void setBezeichnung(String bezeichnung) {
         this.bezeichnung = bezeichnung;
+    }
+
+    @Override
+    public void anzeigen() {
+        super.anzeigen();
+        System.out.println("Bezeichnung: " + this.bezeichnung);
     }
 }
