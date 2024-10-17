@@ -40,7 +40,8 @@ public class Angebot {
     }
 
     public double getReduzierterPreis(){
-
+        double preis = 0;
+        return preis;
     }
 
     @Override
