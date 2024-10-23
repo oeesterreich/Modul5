@@ -8,8 +8,8 @@ public class Rabatt extends Rabattstrategie{
     private double maxidisount = 0.7;
     private double mididiscount = 0.85;
 
-    public Rabatt(double regulärpreis, LocalDate flugdatum, String flugnummer, String bezeichnung) {
-        super(regulärpreis, flugdatum, flugnummer, bezeichnung);
+    public Rabatt(double regulärpreis, LocalDate flugdatum, String flugnummer) {
+        super(regulärpreis, flugdatum, flugnummer);
     }
 
     @Override
@@ -32,12 +32,14 @@ public class Rabatt extends Rabattstrategie{
         if (getFlugdatum().getMonth() == Month.JANUARY||getFlugdatum().getMonth() == Month.APRIL||getFlugdatum().getMonth() == Month.OCTOBER)
         {
             regulärpreis = regulärpreis * maxidisount;
+            setBezeichnung("Maxi discount mit 30%");
             return regulärpreis;
         } else if (getFlugdatum().getMonth() == Month.FEBRUARY||getFlugdatum().getMonth() == Month.MARCH) {
             regulärpreis = regulärpreis * mididiscount;
+            setBezeichnung("Mididiscount mit 15%");
             return regulärpreis;
         } else {
-
+            setBezeichnung("Sie bekommen in diesen Monaten keinen Discount!");
             return regulärpreis;
         }
     }
@@ -48,6 +50,7 @@ public class Rabatt extends Rabattstrategie{
         if (getFlugdatum().getMonth() == Month.JANUARY||getFlugdatum().getMonth() == Month.APRIL||getFlugdatum().getMonth() == Month.OCTOBER||getFlugdatum().getMonth() == Month.FEBRUARY||getFlugdatum().getMonth() == Month.MARCH)
         {
             System.out.println("Rabattierterpreis: " + getReduzierterPreis(getRegulärpreis()));
+            System.out.println("*******************************************************************\n");
         }
     }
 
